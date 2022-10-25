@@ -1,4 +1,4 @@
-![Microsoft Cloud Workshop](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/main/Media/ms-cloud-workshop.png 'Microsoft Cloud Workshop')
+![Microsoft Cloud Workshop](https://github.com/adamkimsft/MCW-Template-Cloud-Workshop/raw/main/Media/ms-cloud-workshop.png 'Microsoft Cloud Workshop')
 
 <div class="MCWHeader1">
 Cloud-native applications
@@ -114,7 +114,7 @@ You should follow all the steps provided in this section _before_ taking part in
    git clone \
       --depth 1 \
       --branch main \
-      https://github.com/microsoft/MCW-Cloud-native-applications.git \
+      https://github.com/adamkimsft/MCW-Cloud-native-applications.git \
       MCW-Cloud-native-applications
    cd MCW-Cloud-native-applications
    ```
