@@ -218,6 +218,8 @@ In this task, you will create a **Migration project** within Azure Database Migr
 
     ![Select source tab with values selected for the MongoDB server.](media/dms-select-source.png "MongoDB to Azure Database for CosmosDB - Select source")
 
+    > **Note:** You will likely also need to open the Mongo inbound port.  Select `fabmedical-[SUFFIX]` | Networking and add an inbound port rule.  Select Service dropdown to be MongoDB and select Add.  If this step is not done, the next step may hang for several minutes and fail to connect to the MongoDB port.
+
 6. Select **Next: Select target >>**.
 
 7. On the **Select target** pane, select the following values:
@@ -301,7 +303,7 @@ This task will gather the information you need about your Azure Kubernetes Servi
 
 This task will deploy the API application to the Azure Kubernetes Service cluster using the Azure Portal.
 
-1. Define a new Namespace for our API deployment. Select the **Namespaces** blade of the fabmedical-[SUFFIX] AKS resource detail page of the Azure Portal, and on the Namespaces tab select **+ Add**.
+1. Define a new Namespace for our API deployment. Select the **Namespaces** blade of the fabmedical-[SUFFIX] AKS resource detail page of the Azure Portal, and on the Namespaces tab select **+ Add** [Create->Create with YAML].
 
   ![This is a screenshot of the Azure Portal for AKS showing adding a Namespace.](media/create-namespace.png "Add a Namespace")
 
@@ -316,7 +318,7 @@ This task will deploy the API application to the Azure Kubernetes Service cluste
       name: ingress-demo
     ```
 
-3. Define a Service for our API so that the application is accessible within the cluster. Select the **Services and ingresses** blade of the fabmedical-[SUFFIX] AKS resource detail page of the Azure Portal, and on the Services tab, select **+ Add**.
+3. Define a Service for our API so that the application is accessible within the cluster. Select the **Services and ingresses** blade of the fabmedical-[SUFFIX] AKS resource detail page of the Azure Portal, and on the Services tab, select **+ Add** [Create->Create with YAML].
 
     ![This is a screenshot of the Azure Portal for AKS showing adding a Service.](media/2021-03-25-17-04-04.png "Add a Service")
 
@@ -346,7 +348,7 @@ This task will deploy the API application to the Azure Kubernetes Service cluste
 
     ![Select workloads under Kubernetes resources.](media/2021-03-25-17-04-35.png "Select workloads under Kubernetes resources")
 
-6. From the Workloads view, with **Deployments** selected (the default), then select **+ Add**.
+6. From the Workloads view, with **Deployments** selected (the default), then select **+ Add** [Create->Create with YAML].
 
     ![Selecting + Add to create a deployment.](media/2021-03-25-17-05-05.png "Selecing + Add to create a deployment")
 
@@ -458,7 +460,7 @@ This task will deploy the API application to the Azure Kubernetes Service cluste
 
     ![This is a screenshot of the Azure cloud shell window showing the command to create the base64 encoded secret.  The output to copy is highlighted.](media/hol-2019-10-18_07-12-13.png "Show encoded secret")
 
-14. Return to the AKS blade in the Azure Portal and select **Configuration** under the **Kubernetes resources** section. Select **Secrets** and choose **+ Add**.
+14. Return to the AKS blade in the Azure Portal and select **Configuration** under the **Kubernetes resources** section. Select **Secrets** and choose **+ Add** [Create->Create with YAML].
 
 15. In the **Add with YAML** screen, paste following YAML and replace the placeholder with the encoded connection string from your clipboard and choose **Add**. Note that YAML is position sensitive so you must ensure indentation is correct when typing or pasting.
 
@@ -1116,7 +1118,7 @@ This task will edit the web application source code to add Application Insights 
 
 11. Visit the `content-web` and `content-api` Actions for your GitHub Fabmedical repository and observe the images being built and deployed into the Kubernetes cluster.
 
-12. While the pipelines rune, return the Azure Portal in the browser.
+12. While the pipelines runs, return the Azure Portal in the browser.
 
 13. From the navigation menu, select **Replica Sets** under **Workloads**. From this view, you will see a new replica set for the web, which may still be in the process of deploying (as shown below) or already fully deployed.
 
